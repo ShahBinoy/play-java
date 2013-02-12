@@ -1,0 +1,67 @@
+<form name="newPost">
+  <fieldset>
+    <legend>
+      New Post
+    </legend>
+      <div class="control-group">
+        <label class="control-label">
+          Title
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="post[title]"
+                   ng-model="post.title"
+                   class="text_field"
+                   required>
+          <span ng-show="newPost.title.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Author
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="post[author]"
+                   ng-model="post.author"
+                   class="text_field"
+                   required>
+          <span ng-show="newPost.author.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Body
+        </label>
+        <div class="controls">
+            <textarea name="post[body]"
+                   ng-model="post.body"
+                   class="text_field"
+                   required></textarea>
+          <span ng-show="newPost.body.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+    <div class="form-actions">
+      <button class="btn btn-success" ng-click="save()"
+        ng-disabled="isClean() || newPost.$invalid">
+        <i class="icon-save"></i> Save
+      </button>
+      <button ng-click="destroy()"
+              ng-show="post.id"
+              class="btn btn-danger">
+              <i class="icon-trash"></i> Delete
+      </button>
+      <a href="/posts" class="btn">Back to posts</a>
+    </div>
+  </fieldset>
+</form>
+

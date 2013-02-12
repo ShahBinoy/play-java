@@ -2,14 +2,73 @@
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="angapp" lang="en">
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-resource.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-loader.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-cookies.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-sanitize.min.js"></script>         
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+
+    <script src="@routes.Assets.at("javascripts/routes.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/posts.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/posts_controller.js")" type="text/javascript"></script>
     </head>
-    <body>
-        @content
-    </body>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">PostApp</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <div class="row">
+           <div ng-view class="span9">
+            </div>
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <h3>Sidebar</h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Sidebar</li>
+                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "Link2", "/path2"  %></li>
+                  <li><%= link_to "Link3", "/path3"  %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+        </div><!--/row-->
+      </div><!--/content-->
+
+     <!--  @content -->
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>    
+     
 </html>
