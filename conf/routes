@@ -11,4 +11,6 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 # Posts          
 GET     /posts                  controllers.Application.posts()
 POST    /posts                  controllers.Application.newPost()
-POST    /posts/:id/delete       controllers.Application.deletePost(id: Long)
+GET  /posts/:id       controllers.Application.post(id: Long)
+PUT  /posts/:id       controllers.Application.updatePost(id: Long)
+DELETE  /posts/:id       controllers.Application.deletePost(id: Long)

@@ -37,14 +37,14 @@
       </div>
       <div class="control-group">
         <label class="control-label">
-          Body
+          Content
         </label>
         <div class="controls">
-            <textarea name="post[body]"
-                   ng-model="post.body"
+            <textarea name="post[content]"
+                   ng-model="post.content"
                    class="text_field"
                    required></textarea>
-          <span ng-show="newPost.body.$error.required"
+          <span ng-show="newPost.content.$error.required"
                 class="help-inline">
             Required
           </span>
@@ -55,11 +55,7 @@
         ng-disabled="isClean() || newPost.$invalid">
         <i class="icon-save"></i> Save
       </button>
-      <button ng-click="destroy()"
-              ng-show="post.id"
-              class="btn btn-danger">
-              <i class="icon-trash"></i> Delete
-      </button>
+      
       <a href="/posts" class="btn">Back to posts</a>
     </div>
   </fieldset>

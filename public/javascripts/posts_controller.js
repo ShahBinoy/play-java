@@ -6,6 +6,7 @@ function PostsIndexCtrl($scope, Post) {
     if(dconfirm){
       var original = this.post
       this.post.destroy(function() {
+        console.info('delete')
         $scope.posts = _.without($scope.posts, original);
       });
     }
@@ -16,8 +17,8 @@ PostsIndexCtrl.$inject = ['$scope', 'Post'];
 
 function PostsCreateCtrl($scope, $location, Post) {
   $scope.save = function() {
-    Post.save($scope.post, function(post) {
-      $location.path('/posts/' + post.id + '/edit');
+    Post.save($scope.post, function(post) {      
+      $location.path('/posts/');
     });
   }
 }
